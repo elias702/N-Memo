@@ -10,7 +10,8 @@ N-Memo is a collaborative memo-sharing platform designed for teams and organizat
 
 ## Tech Stack
 - **Backend:** FastAPI
-- **Frontend:** 
+- **Frontend:** HTML, TAILWIND CSS ,JAVASCRIPT, DAISY UI (IF NEEDED)
+- **UI/UX:** FIGMA , FONT AWESOME ICONS, FROM ONLINE RESEARCH
 - **Database:** PostgreSQL / SQLite
 - **Authentication:** JWT / OAuth
 - API Documentation: Swagger UI
