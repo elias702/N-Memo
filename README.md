@@ -7,3 +7,10 @@ N-Memo is a collaborative memo-sharing platform designed for teams and organizat
 - Share memos across the organization
 - Notifications for memo updates
 - Clean, user-friendly interface
+
+## Tech Stack
+- **Backend:** FastAPI
+- **Frontend:** 
+- **Database:** PostgreSQL / SQLite
+- **Authentication:** JWT / OAuth
+- API Documentation: Swagger UI
