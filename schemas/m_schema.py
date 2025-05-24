@@ -1,5 +1,5 @@
 from typing import Optional
-from pydantic import BaseModel, ConfigDict, computed_field
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
 
@@ -22,28 +22,19 @@ class SMemoCreateResponse(SMemoBase):
     model_config = ConfigDict(from_attributes=True)
 
 
-# Used for all other responses
-class SMemoResponse(SMemoBase):
-    id: int
-    created_at: datetime
-    updated_at: Optional[datetime]
+class SMemoUpdate(SMemoBase):
+    pass
 
-    model_config = ConfigDict(from_attributes=True)
 
-    @computed_field
-    @property
-    def updated_at_msg(self) -> str:
-        return (
-            "Not updated yet"
-            if self.updated_at is None
-            else self.updated_at.strftime("%Y-%m-%d %H:%M:%S")
-        )
+class SMemoPartialUpdate(BaseModel):
+    title: Optional[str] = None
+    content: Optional[str] = None
 
 
 # Update response
 class SMemoUpdateResponse(SMemoBase):
     id: int
     created_at: datetime
-    updated_at: datetime
+    updated_at: Optional[datetime] = None
 
     model_config = ConfigDict(from_attributes=True)
