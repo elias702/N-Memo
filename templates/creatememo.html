@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Memo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-white min-h-screen flex flex-col items-center justify-center px-4"
+  >
+    <!-- Logo Top Left -->
+    <div class="absolute top-6 left-6">
+      <img src="asset/logo 1.png" alt="Memo Logo" class="h-10" />
+    </div>
+
+    <!-- Form Card -->
+    <div class="bg-gray-100 p-8 rounded-2xl w-full max-w-md shadow-md mt-20">
+      <input
+        type="text"
+        placeholder="Title…"
+        class="w-full mb-4 px-4 py-2 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <textarea
+        placeholder="Description…"
+        class="w-full h-40 mb-4 px-4 py-2 rounded-lg text-gray-700 resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+      ></textarea>
+
+      <div class="flex justify-end">
+        <button
+          class="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition"
+        >
+          <i class="fa fa-plus"></i> Create
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

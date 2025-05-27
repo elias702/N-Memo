@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All memo</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome (hamburger / × icons in sidebar.js) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SZzYf4F7..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-white font-sans text-black">
+  <!-- 🟥 Sidebar is injected by sidebar.js -->
+
+  <!-- 🟦 MAIN CONTENT -->
+  <main class="lg:ml-64">
+    <!-- push right by sidebar width on desktops -->
+
+    <!-- Top Bar -->
+    <div class="flex justify-between items-center px-6 py-4">
+      <h1 class="text-3xl font-bold">All memo</h1>
+
+      <div class="flex items-center space-x-4">
+        <button
+          class="bg-orange-200 text-black text-sm font-medium px-3 py-1.5 rounded-full flex items-center space-x-1">
+          <span>❓</span>
+          <span>FAQ</span>
+        </button>
+        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white">
+          <span>👤</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="text-center text-gray-700 mb-10">
+      Find memos of all categorical, organizational
+    </p>
+
+    <!-- Memo Grid -->
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 place-items-center">
+        <!-- Card -->
+        <div class="text-center">
+          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
+          <p class="font-semibold">Native memo organization</p>
+        </div>
+
+        <!-- Duplicate as needed -->
+        <div class="text-center">
+          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
+          <p class="font-semibold">Native memo organization</p>
+        </div>
+
+        <div class="text-center">
+          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
+          <p class="font-semibold">Native memo organization</p>
+        </div>
+
+        <div class="text-center">
+          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
+          <p class="font-semibold">Native memo organization</p>
+        </div>
+
+        <div class="text-center">
+          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
+          <p class="font-semibold">Native memo organization</p>
+        </div>
+
+        <div class="text-center">
+          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
+          <p class="font-semibold">Native memo organization</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sidebar logic -->
+  <script src="sidebar.js" defer></script>
+</body>
+
+</html>

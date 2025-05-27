@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="max-w-300 mx-auto mb-20 md:overflow-hidden lg:overflow-hidden">
+    <div class="flex flex-col-reverse md:flex-row lg:flex-row">
+      <!-- image section  -->
+      <div
+        class="w-full min-h-screen bg-[url('asset/sign_upBackground.jpg')] bg-cover bg-center bg-no-repeat flex-1"
+      >
+        <!-- <img
+          class="w-[780px] md:w-[780px] lg:w-[780px] h-full object-cover"
+          src="asset/sign_in/sign_up.jpg"
+          alt=""
+        /> -->
+        <div
+          class="h-[100%] flex flex-col justify-end items-center md:relative md:bottom-28 lg:relative lg:bottom-32 gap-5"
+        >
+          <h1 class="font-bold text-5xl text-white">Create account.</h1>
+          <p class="text-white text-lg font-semibold text-center">
+            "Great things are not done by impulse, but by a series of small
+            things brought together." — Vincent Van Gogh
+          </p>
+        </div>
+      </div>
+      <!-- text section  -->
+      <div class="flex-1">
+        <!-- nav bar -->
+        <div class="flex justify-between p-8">
+          <img class="h-8" src="asset/logo 1.png" alt="" />
+          <a href="landing.html">
+            <button class="border border-black rounded-xl px-3 py-1">
+              Back <span><i class="fa-solid fa-arrow-right"></i></span></button
+          ></a>
+        </div>
+        <!-- sign in  -->
+        <div class="flex flex-col justify-center items-center">
+          <!-- text  -->
+          <div>
+            <h2 class="text-2xl text-center font-bold">Sign Up</h2>
+            <p class="text-sm text-center text-black">
+              Welcome to Native Memo - Let’s create account
+            </p>
+          </div>
+          <div class="flex gap-3 justify-center mt-8 mb-2">
+            <!-- first name  -->
+            <div class="flex flex-col">
+              <label class="text-sm mb-2 text-black" for="fname"
+                >First name</label
+              >
+              <input
+                class="text-sm text-left py-2.5 px-4 bg-[#FFF] rounded-3xl border border-black"
+                type="text"
+                placeholder="First name"
+                id="fname"
+              />
+            </div>
+            <!-- last name  -->
+            <div class="flex flex-col">
+              <label class="text-sm mb-2 text-black" for="lname"
+                >Last name</label
+              >
+              <input
+                class="text-sm text-left py-2.5 px-4 bg-[#FFF] rounded-3xl border border-black"
+                type="text"
+                placeholder="Last name"
+                id="lname"
+              />
+            </div>
+          </div>
+          <!-- form for sign up  -->
+          <div>
+            <!-- username  -->
+            <div class="flex flex-col w-[390px]">
+              <label class="text-sm mb-2 text-black" for="username"
+                >Username</label
+              >
+              <input
+                class="text-sm text-left py-2.5 px-4 bg-[#FFF] rounded-3xl border border-black"
+                type="text"
+                placeholder="username"
+                id="username"
+              />
+            </div>
+            <!-- username end  -->
+            <!-- email  -->
+            <div class="flex flex-col w-[390px] mt-2">
+              <label class="text-sm mb-2 text-black" for="email"
+                >Email address</label
+              >
+              <input
+                class="text-sm text-left py-2.5 px-4 bg-[#FFF] rounded-3xl border border-black"
+                type="email"
+                placeholder="email"
+                id="email"
+              />
+            </div>
+            <!-- email end  -->
+            <!-- organization -->
+            <div class="flex flex-col w-[390px] mt-2">
+              <label class="text-sm mb-2 text-black" for="username"
+                >Organizations</label
+              >
+
+              <div class="relative">
+                <!-- Input field -->
+                <input
+                  class="text-sm text-left py-2.5 px-4 pr-10 bg-[#FFF] rounded-3xl border border-black w-full"
+                  type="text"
+                  placeholder="select an organization"
+                  id="username"
+                />
+
+                <!-- Right-side arrow icon -->
+                <div class="absolute inset-y-0 right-3 flex items-center">
+                  <i class="fa-solid fa-angle-down text-black text-sm"></i>
+                </div>
+              </div>
+            </div>
+            <!-- organization end  -->
+            <!-- password  -->
+            <div class="flex flex-col w-[390px] mt-2">
+              <label class="text-sm mb-2 text-black" for="password"
+                >Password</label
+              >
+              <input
+                class="text-sm text-left py-2.5 px-4 bg-[#FFF] rounded-3xl border border-black"
+                type="password"
+                placeholder="password"
+                id="password"
+              />
+            </div>
+            <!-- password end  -->
+            <!-- confirm password 
+               -->
+            <!-- confirm password end  -->
+            <div class="flex flex-col w-[390px] mt-2">
+              <label class="text-sm mb-2 text-black" for="cpassword"
+                >Confirm password</label
+              >
+              <input
+                class="text-sm text-left py-2.5 px-4 bg-[#FFF] rounded-3xl border border-black"
+                type="password"
+                placeholder="re-enter the password"
+                id="cpassword"
+              />
+            </div>
+          </div>
+          <!-- sign up button  -->
+          <div>
+            <button
+              class="py-2.5 px-4 w-[390px] text-sm font-semibold bg-[#FFB845] rounded-3xl mt-5"
+            >
+              Sign Up
+            </button>
+          </div>
+          <!-- did not have account  -->
+          <div class="text-center mt-4">
+            <p class="text-sm text-black font-semibold mb-2">
+              Already have account?
+              <a href="#" class="text-blue-600 font-semibold hover:underline"
+                >Login</a
+              >
+            </p>
+            <p>
+              <span class="text-gray-400 text-medium"
+                >By creating an account, you agree to our</span
+              >
+              <span class="text-blue-500"
+                ><a class="text-blue hover:underline" href=""
+                  >terms of use.</a
+                ></span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.sql import func
 
-from app.database import Base
+from dev.database import Base
 
 
 class Memo(Base):

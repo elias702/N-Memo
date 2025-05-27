@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet" />
+  <style>
+    .playfair {
+      font-family: "Playfair Display", serif;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="max-w-screen-xl mx-auto">
+    <nav class="flex items-center flex-col md:flex-row lg:flex-row justify-between px-6 py-4">
+      <!--  Title -->
+      <!-- <h1 class="text-2xl font-bold text-gray-900">Native Memo</h1> -->
+      <img src="/static/asset/logo 1.png" alt="logo" />
+
+      <!-- Navigation Links -->
+      <div class="flex flex-col md:flex-row lg:flex-row gap-2 md:gap-10 lg:gap-10 justify-center items-center">
+        <a href="/sign_in/" class="text-gray-700 font-medium hover:text-blue-600 transition mt-2 md:mt-0 lg:mt-0">Sign
+          In</a>
+
+        <a href="/sign_up/" class="text-black font-medium rounded-lg hover:text-blue-700 transition">Sign Up</a>
+      </div>
+    </nav>
+    <!-- title section  -->
+    <section class="my-20">
+      <h1 class="playfair text-5xl font-bold text-center leading-normal tracking-wider">
+        Capture Your Thoughts, <br />
+        Anytime, Anywhere!
+      </h1>
+      <div class="flex justify-center mt-10">
+        <a href="/create_memo/" class="px-4 py-2.5 rounded-3xl bg-[#FEDC3C]">
+          Get Started
+        </a>
+      </div>
+    </section>
+  </header>
+  <main>
+    <!-- banner section  -->
+    <section class="max-w-[1200px] mx-auto">
+      <!-- banner image  -->
+      <div>
+        <img class="rounded-3xl" src="/static/asset/landing/banner.jpg" alt="banner image" />
+      </div>
+      <!-- banner cards  -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-[90%] mx-auto gap-5">
+        <!-- card 1 -->
+        <div class="rounded-xl bg-[#FFFDEB] p-5 relative bottom-20 flex flex-col justify-center items-center">
+          <div>
+            <img class="h-[80px] w-[70px]" src="/static/asset/landing/easy.png" alt="card image" />
+          </div>
+          <div>
+            <h4 class="text-md font-semibold text-center">
+              Easy Memo Creation
+            </h4>
+            <p class="text-sm text-center mb-2">
+              Quickly write and save memos with a simple, clean editor.
+            </p>
+          </div>
+        </div>
+        <!-- card 2 -->
+        <div class="rounded-xl bg-[#FFFDEB] p-5 relative bottom-20 flex flex-col justify-center items-center">
+          <div>
+            <img class="h-[80px] w-[70px]" src="/static/asset/landing/sync.png" alt="card image" />
+          </div>
+          <div>
+            <h4 class="text-md font-semibold text-center">
+              Sync Across Devices
+            </h4>
+            <p class="text-sm text-center mb-2">
+              Your data is automatically saved and synced across all devices.
+            </p>
+          </div>
+        </div>
+        <!-- card 3 -->
+        <div class="rounded-xl bg-[#FFFDEB] p-5 relative bottom-20 flex flex-col justify-center items-center">
+          <div>
+            <img class="h-[80px] w-[70px]" src="/static/asset/landing/private.png" alt="card image" />
+          </div>
+          <div>
+            <h4 class="text-md font-semibold text-center">
+              Private & Public Memos
+            </h4>
+            <p class="text-sm text-center mb-2">
+              Quickly write and save memos with a simple, clean editor.
+            </p>
+          </div>
+        </div>
+        <!-- card 4 -->
+        <div class="rounded-xl bg-[#FFFDEB] p-5 relative bottom-20 flex flex-col justify-center items-center">
+          <div>
+            <img class="h-[80px] w-[70px]" src="/static/asset/landing/free.png" alt="card image" />
+          </div>
+          <div>
+            <h4 class="text-md font-semibold text-center">Fully Free</h4>
+            <p class="text-sm text-center mb-2">
+              Enjoy all features without any hidden costs or subscriptions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- sneak peek section  -->
+    <section class="my-20 py-10 bg-[#FEFFDD]">
+      <!-- section title  -->
+      <h2 class="text-black font-bold text-3xl text-center">
+        A Sneak Peek at Your Future Memos
+      </h2>
+      <!-- section description  -->
+      <p class="text-sm mt-3 text-black text-center">
+        Writing memos has never been this simple. Take a look at how it works!
+      </p>
+      <!-- caard  -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-[70%] mx-auto my-20">
+        <!-- card 1  -->
+        <div class="rounded-xl bg-white">
+          <img class="rounded-t-xl w-[100%] h-40 object-cover" src="/static/asset/landing/future.jpg"
+            alt="memo banner" />
+          <h2 class="text-2xl font-bold my-3 mx-5">Productivity Tips</h2>
+          <p class="text-sm mb-10 mx-5">
+            To boost productivity, try the Pomodoro Technique: work for 25
+            minutes, then take a 5-minute break. Prioritize tasks using the
+            Eisenhower Matrix, avoid multitasking, and focus on one...
+          </p>
+        </div>
+        <!-- card 2  -->
+        <div class="rounded-xl bg-white">
+          <img class="rounded-t-xl w-[100%] h-40 object-cover" src="/static/asset/landing/future.jpg"
+            alt="memo banner" />
+          <h2 class="text-2xl font-bold my-3 mx-5">
+            Ingredients to make Burger
+          </h2>
+          <p class="text-sm mb-10 mx-5">
+            Ingredients: 🍞 Bun, 🥩 Beef Patty, 🥬 Lettuce, 🍅 Tomato, 🧀
+            Cheese <br />
+            Steps: <br />
+            1. Grill the patty for 5 mins each side. <br />
+            2.Toast buns & add toppings. <br />
+            3. Serve with fries & enjoy! 😋
+          </p>
+        </div>
+        <!-- card 3  -->
+        <div class="rounded-xl bg-white">
+          <img class="rounded-t-xl w-[100%] h-40 object-cover" src="/static/asset/landing/future.jpg"
+            alt="memo banner" />
+          <h2 class="text-2xl font-bold my-3 mx-5">
+            Quick 5-Minute Workout Routine
+          </h2>
+          <p class="text-sm mb-10 mx-5">
+            No time for the gym? Try a quick 5-minute workout: 1 minute of
+            jumping jacks, 1 minute of squats, 1 minute of push-ups, 1 minute
+            of lunges, and finish with 1 minute of ....
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- what people say section  -->
+    <section class="max-w-[1200px] mx-auto my-20">
+      <h2 class="text-black font-bold text-3xl text-center">
+        What people say
+      </h2>
+      <!-- section description  -->
+      <p class="text-sm mt-3 text-black w-[50%] md:w-[100%] lg:w-[100%] mx-auto text-center mb-8">
+        Discover what our satisfied customers have to say about their user
+        experiences
+      </p>
+      <!-- cards  -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-5">
+        <!-- card 1  -->
+        <div class="bg-[#F7BFFF] p-10 row-span-2 rounded-xl">
+          <!-- avatar  -->
+          <div class="avatar flex gap-5 items-center">
+            <div class="ring-primary ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
+              <img src="/static/asset/landing/pro_pic.webp" />
+            </div>
+            <!-- name age  -->
+            <div class="flex flex-col items-center relative top-5">
+              <h4 class="font-bold text-xl">Larry Jane</h4>
+              <h6 class="font-semibold text-sm">20 years</h6>
+            </div>
+          </div>
+          <!-- avatar end  -->
+          <p class="text-black font-semibold mt-5">
+            I absolutely love this website! It’s super easy to use and helps
+            me stay organized. The memo editor is simple, and I can access my
+            notes anywhere. I’ve started using it every day, and it has
+            definitely boosted my productivity. Highly recommend it to anyone
+            looking to get their thoughts down quickly and efficiently!
+          </p>
+        </div>
+        <!-- card 2  -->
+        <div class="bg-[#F7BFFF] p-10 rounded-xl">
+          <!-- avatar  -->
+          <div class="avatar flex gap-5 items-center">
+            <div class="ring-primary ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
+              <img src="/static/asset/landing/pro_pic.webp" />
+            </div>
+            <!-- name age  -->
+            <div class="flex flex-col items-center relative top-5">
+              <h4 class="font-bold text-xl">Larry Jane</h4>
+              <h6 class="font-semibold text-sm">20 years</h6>
+            </div>
+          </div>
+          <!-- avatar end  -->
+          <p class="text-black text-sm mt-5">
+            Super easy to use! Love how simple and fast it is to save my
+            memos.
+          </p>
+        </div>
+        <!-- card 3  -->
+        <div class="bg-[#F7BFFF] p-10 rounded-xl">
+          <!-- avatar  -->
+          <div class="avatar flex gap-5 items-center">
+            <div class="ring-primary ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
+              <img src="/static/asset/landing/pro_pic.webp" />
+            </div>
+            <!-- name age  -->
+            <div class="flex flex-col items-center relative top-5">
+              <h4 class="font-bold text-xl">Larry Jane</h4>
+              <h6 class="font-semibold text-sm">20 years</h6>
+            </div>
+          </div>
+          <!-- avatar end  -->
+          <p class="text-black text-sm mt-5">
+            Great memo app! Just wish it had more formatting options.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- your thoughts section  -->
+    <section class="my-20 bg-[url('/static/asset/landing/background.jpg')] bg-cover bg-center bg-no-repeat p-20">
+      <h2 class="text-black font-bold text-3xl text-center">
+        Your Thoughts , One Click Away!
+      </h2>
+      <!-- section description  -->
+      <p class="text-lg mt-3 text-black w-[80%] md:w-[100%] lg:w-[100%] mx-auto text-center mb-8 italic">
+        Join now and start saving your notes effortlessly. It’s free and
+        always accessible!
+      </p>
+      <!-- button  -->
+      <div class="flex justify-center text-white">
+        <a href="/sign_up/" class="rounded-3xl py-3 px-6 bg-[#2F2F2F]">
+          Sign up now
+        </a>
+      </div>
+    </section>
+    <!-- foot title section  -->
+    <section class="my-20">
+      <h1 class="font-semibold text-5xl text-center">
+        Your mind is for having ideas, not holding them.
+      </h1>
+    </section>
+  </main>
+  <footer class="footer bg-[#242424] text-base-content p-10">
+    <aside>
+      <p class="text-white space-y-5">
+        <span class="text-3xl font-bold">Native Memo</span> <br />
+        <span class="inline-block w-[50%]">
+          A simple and reliable platform to write, save, and access your memos
+          anytime, anywhere.2</span>
+      </p>
+    </aside>
+
+    <nav>
+      <h6 class="footer-title text-white">Links</h6>
+      <a class="link link-hover text-white">Features</a>
+      <a class="link link-hover text-white">Reviews</a>
+      <a class="link link-hover text-white" href="/sign_up/">Create account</a>
+      <a class="link link-hover text-white" href="/sign_in/">Log in</a>
+    </nav>
+    <nav>
+      <h6 class="footer-title text-white">Contact Us</h6>
+      <a class="link link-hover text-white">nativememo@gamil.com</a>
+      <a class="link link-hover text-white">+00815614309</a>
+    </nav>
+  </footer>
+  <p class="text-white text-sm bg-black text-center p-5">
+    © 2025 Native Memo. All rights reserved.
+  </p>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet" />
+  <style>
+    .playfair {
+      font-family: "Playfair Display", serif;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="max-w-screen-xl mx-auto">
+    <h1 class="playfair font-bold text-center text-5xl max-w-[1200px] mx-auto my-10">
+      Create ,Share memo with your <br />
+      Organization easily
+    </h1>
+  </header>
+  <!-- HERO + MEMO PANEL -->
+  <!-- MEMO AREA (white page) -->
+  <section class="py-20 bg-white">
+    <!-- CREATE MEMO CTA (top‑center) -->
+    <!-- CREATE MEMO CTA (top‑center) -->
+    <div class="flex justify-center items-center gap-6">
+      <!-- Left Image -->
+      <img src="/static/asset/vector1 (2).png" alt="Left Icon" class="w-96 h-auto" />
+
+      <!-- Button -->
+      <a href="/create_memo/"
+        class="flex items-center gap-3 px-8 py-3 rounded-full bg-blue-500 text-white text-lg font-medium hover:bg-blue-600 transition">
+        <i class="fa-solid fa-plus text-xl"></i> Create Memo
+      </a>
+
+      <!-- Right Image -->
+      <img src="/static/asset/vector1 (1).png" alt="Right Icon" class="w-96 h-auto" />
+    </div>
+
+    <!-- SCROLLABLE MEMO CARD -->
+    <div class="mx-auto mt-16 w-11/12 max-w-4xl rounded-3xl bg-white shadow-xl ring-1 ring-black/10">
+      <!-- header -->
+      <div class="flex items-center justify-between px-8 pt-8">
+        <h2 class="playfair text-3xl font-semibold">Organization memos</h2>
+        <a href="/create_memo"
+          class="flex items-center gap-2 px-6 py-2 rounded-full bg-black text-white hover:bg-gray-800 transition">
+          <i class="fa-solid fa-plus"></i> Create
+        </a>
+      </div>
+
+      <!-- tabs + search -->
+      <div class="flex items-center justify-between px-8 mt-8 border-b">
+        <div role="tablist" class="tabs tabs-bordered">
+          <a role="tab" class="tab tab-active" href="/my_memo/">My Memo</a>
+          <a role="tab" class="tab" href="#">Favourite</a> <!----------------- For later --------------------->
+          <a role="tab" class="tab" href="#">Viewed</a> <!--------------------- For later --------------------->
+        </div>
+        <div class="relative w-60">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+          <input type="text" placeholder="Search title, date.."
+            class="input input-bordered pl-10 w-full h-10 rounded-full" />
+        </div>
+      </div>
+
+      <!-- table container : max‑height + scroll -->
+      <div class="px-8 pb-10 max-h-[420px] overflow-y-auto">
+        <table class="table w-full mt-4">
+          <thead>
+            <tr class="text-gray-500 border-b sticky top-0 bg-white">
+              <th class="font-normal">Title</th>
+              <th class="font-normal">Date</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="[&>tr:nth-child(even)]:bg-gray-200/60">
+            {% if memos %}
+            {% for memo in memos %}
+            <tr class="border-b">
+              <td>{{ memo.title }}</td>
+              <td>{{ memo.created_at.strftime('%d %m %Y')}}</td>
+              <td class="text-right">
+                <a href="/memo_detail/{{memo.id}}"
+                  class="btn btn-sm rounded-full bg-blue-500 text-white hover:bg-blue-600 px-4">View</a>
+              </td>
+            </tr>
+            {% endfor %}
+            {% else %}
+            <tr>
+              <td colspan="3" class="text-center py-4">No memos found.</td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <script src="/static/sidebar.js" defer></script>
+</body>
+
+</html>

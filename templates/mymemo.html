@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SZzYf4F7..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body class="bg-white font-sans text-black">
+  <main class="px-6 py-6 max-w-6xl mx-auto lg:ml-64">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold">{{title}}</h1>
+      <div class="flex items-center space-x-4">
+        <button
+          class="bg-orange-200 text-black text-sm font-medium px-3 py-1.5 rounded-full flex items-center space-x-1">
+          <span class="text-lg">❓</span>
+          <span>FAQ</span>
+        </button>
+        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white">
+          <span>👤</span>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="text-gray-400 text-xl mb-5">
+      Follow new updates and improvements to Memo.
+    </h4>
+
+    <button class="bg-orange-300 text-black font-semibold px-5 py-2 rounded-full mb-6 flex items-center space-x-2">
+      <span>🔔</span>
+      <span>Subscribe to updates</span>
+    </button>
+
+    <div class="mb-6">
+      <input type="text" placeholder="Search..."
+        class="w-full max-w-sm px-4 py-2 border border-gray-300 rounded-full focus:outline-none" />
+    </div>
+
+    <hr class="mb-6 border-gray-300" />
+
+    <div class="space-y-6">
+      {% if memos %}
+      {% for memo in memos %}
+      <div class="rounded-xl overflow-hidden border border-gray-200 shadow-md">
+        <div class="bg-gray-100 px-6 py-8">
+          <div class="flex justify-between space-x-3 mb-4 items-center">
+            <div>
+              <p class="font-bold text-lg">
+                {{ memo.created_at.strftime('%b %d, %Y') }}
+              </p>
+              {% if memo.updated_at %}
+              <span class="bg-blue-200 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full">Updated: {{
+                memo.updated_at.strftime('%b %d, %Y') }}</span>
+              {% else %}
+              <span class="bg-green-200 text-green-800 text-xs font-semibold px-2 py-1 rounded-full">New</span>
+              {% endif %}
+            </div>
+            <div>
+              <a href="/memo_detail/{{ memo.id }}"
+                class="py-2 px-3 bg-blue-500 rounded-3xl text-white hover:bg-blue-600 mr-2">
+                View Memo
+              </a>
+              <button class="py-2 px-3 bg-red-500 rounded-3xl text-white hover:bg-red-600">
+                Remove memo
+              </button>
+            </div>
+          </div>
+
+          <a href="/memo_detail/{{ memo.id }}" class="hover:underline">
+            <h2 class="text-xl font-bold mb-4">{{ memo.title }}</h2>
+          </a>
+          <p class="text-gray-700 mb-4">{{ memo.content | truncate(150, true, '...') }}</p>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="text-center py-10 text-gray-500">
+        <p class="text-lg">No memos found.</p>
+        <p>Create a new memo to see it here!</p>
+        <a href="/create_memo" class="text-blue-500 hover:underline mt-4 block">
+          Create Memo
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </main>
+
+  <script src="/static/sidebar.js" defer></script>
+</body>
+
+</html>

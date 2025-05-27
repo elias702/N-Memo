@@ -1,12 +1,12 @@
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, Path
 from sqlalchemy.orm import Session
-from typing import Annotated
+from typing import Annotated, List
 from starlette import status
 
 from models import m_model
 from schemas import m_schema
-from app.database import get_db
+from dev.database import get_db
 
 
 router = APIRouter(prefix="/memos", tags=["memos"])
@@ -27,6 +27,7 @@ async def create_memo(memo: m_schema.SMemoCreate, db: db_dependency):
 
 @router.get(
     "/{memo_id}",
+    response_model=m_schema.SMemoUpdateResponse,
     status_code=status.HTTP_200_OK,
 )
 async def read_memo(db: db_dependency, memo_id: int = Path(gt=0)):
@@ -36,12 +37,13 @@ async def read_memo(db: db_dependency, memo_id: int = Path(gt=0)):
 
     if memo_model.updated_at:
         return m_schema.SMemoUpdateResponse.model_validate(memo_model)
-
     return m_schema.SMemoCreateResponse.model_validate(memo_model)
+    # return memo_model
 
 
 @router.get(
     "/",
+    # response_model=List[m_schema.SMemoUpdateResponse],
     status_code=status.HTTP_200_OK,
 )
 async def read_all_memo(db: db_dependency, skip: int = 0, limit: int = 25):
@@ -58,7 +60,7 @@ async def read_all_memo(db: db_dependency, skip: int = 0, limit: int = 25):
 
 @router.patch(
     "/{memo_id}",
-    response_model=m_schema.SMemoUpdateResponse,
+    # response_model=m_schema.SMemoUpdateResponse,
     status_code=status.HTTP_200_OK,
 )
 async def update_memo(
