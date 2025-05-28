@@ -4,27 +4,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All memo</title>
-
-  <!-- Tailwind CSS -->
+  <title>{{ title }}</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Font Awesome (hamburger / × icons in sidebar.js) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SZzYf4F7..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="bg-white font-sans text-black">
-  <!-- 🟥 Sidebar is injected by sidebar.js -->
-
-  <!-- 🟦 MAIN CONTENT -->
   <main class="lg:ml-64">
-    <!-- push right by sidebar width on desktops -->
-
-    <!-- Top Bar -->
     <div class="flex justify-between items-center px-6 py-4">
-      <h1 class="text-3xl font-bold">All memo</h1>
-
+      <h1 class="text-3xl font-bold">{{ title }}</h1>
       <div class="flex items-center space-x-4">
         <button
           class="bg-orange-200 text-black text-sm font-medium px-3 py-1.5 rounded-full flex items-center space-x-1">
@@ -37,51 +27,34 @@
       </div>
     </div>
 
-    <!-- Subtitle -->
     <p class="text-center text-gray-700 mb-10">
       Find memos of all categorical, organizational
     </p>
 
-    <!-- Memo Grid -->
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 place-items-center">
-        <!-- Card -->
-        <div class="text-center">
-          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
-          <p class="font-semibold">Native memo organization</p>
+        {% if memos %}
+        {% for memo in memos %}
+        <a href="/memo_detail/{{ memo.id }}" class="text-center block group">
+          <img src="/static/asset/landing/future.jpg" alt="Memo"
+            class="rounded-2xl w-40 h-40 object-cover mb-2 transform group-hover:scale-105 transition-transform duration-200" />
+          <p class="font-semibold group-hover:text-blue-600 transition-colors duration-200">{{ memo.title }}</p>
+        </a>
+        {% endfor %}
+        {% else %}
+        <div class="col-span-full text-center py-10 text-gray-500">
+          <p class="text-lg">No memos found.</p>
+          <p>Start by creating a new memo!</p>
+          <a href="/create_memo/" class="text-blue-500 hover:underline mt-4 block">
+            Create Memo
+          </a>
         </div>
-
-        <!-- Duplicate as needed -->
-        <div class="text-center">
-          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
-          <p class="font-semibold">Native memo organization</p>
-        </div>
-
-        <div class="text-center">
-          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
-          <p class="font-semibold">Native memo organization</p>
-        </div>
-
-        <div class="text-center">
-          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
-          <p class="font-semibold">Native memo organization</p>
-        </div>
-
-        <div class="text-center">
-          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
-          <p class="font-semibold">Native memo organization</p>
-        </div>
-
-        <div class="text-center">
-          <img src="../static/asset/future.jpg" alt="Memo" class="rounded-2xl w-40 h-40 object-cover mb-2" />
-          <p class="font-semibold">Native memo organization</p>
-        </div>
+        {% endif %}
       </div>
     </div>
   </main>
 
-  <!-- Sidebar logic -->
-  <script src="sidebar.js" defer></script>
+  <script src="/static/sidebar.js" defer></script>
 </body>
 
 </html>
