@@ -106,11 +106,19 @@ window.addEventListener("resize", () => {
 });
 /* 🔖 HIGHLIGHT ACTIVE LINK ------------------------------------ */
 (function highlightActive() {
-  // map a simple “route” name from URL, e.g. dashboard.html → dashboard
-  const path = location.pathname.split("/").pop().split(".")[0] || "dashboard";
-  const current = sidebar.querySelector(`[data-route="${path}"]`);
+  const path = location.pathname.toLowerCase(); // normalize case
+  let route = "";
+
+  if (path.includes("/dashboard")) route = "dashboard";
+  else if (path.includes("/my_memo")) route = "mymemo";
+  else if (path.includes("/all_memo")) route = "allmemo";
+  else if (path.includes("/edit_profile")) route = "profile";
+  else route = "dashboard"; // fallback
+
+  const current = sidebar.querySelector(`[data-route="${route}"]`);
   if (current) current.classList.add("bg-amber-100");
 })();
+
 /* ----------  HELPERS  ---------- */
 function openSidebar() {
   sidebar.style.transform = "translateX(0)";
